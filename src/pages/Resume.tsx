@@ -80,13 +80,12 @@ const Resume = () => {
 
   const handleDownloadCV = () => {
     const a = document.createElement('a');
-    a.href = `${import.meta.env.BASE_URL}cv_jeu_shin.pdf`; // /J.Shin/ 환경에서도 OK
+    a.href = `${import.meta.env.BASE_URL}cv_jeu_shin.pdf`;
     a.download = 'Jeu_Shin_CV.pdf';
     document.body.appendChild(a);
     a.click();
-    a.remove();
+    document.body.removeChild(a);
   };
-
 
   // const handleDownloadCV = () => {
   //   // PDF download functionality
