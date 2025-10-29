@@ -4,8 +4,8 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "VITE_ENABLE_ROUTE_MESSAGING=true vite",
-    "build": "vite build",
+    "dev": "cross-env VITE_ENABLE_ROUTE_MESSAGING=true vite",
+    "build": "cross-env NODE_ENV=production vite build",
     "build:dev": "VITE_ENABLE_ROUTE_MESSAGING=true vite build --mode development --sourcemap",
     "build:map": "VITE_ENABLE_ROUTE_MESSAGING=true vite build --sourcemap",
     "lint": "eslint .",

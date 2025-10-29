@@ -65,11 +65,11 @@ const Resume = () => {
       label: "Personal Email",
       value: "colorcircle33@gmail.com"
     },
-    {
-      icon: <Phone className="h-4 w-4" />,
-      label: "Phone",
-      value: "+82-10-5513-0665"
-    },
+    // {
+    //   icon: <Phone className="h-4 w-4" />,
+    //   label: "Phone",
+    //   value: "+82-10-5513-0665"
+    // },
     {
       icon: <MapPin className="h-4 w-4" />,
       label: "Location",
@@ -77,15 +77,26 @@ const Resume = () => {
     }
   ];
 
+
   const handleDownloadCV = () => {
-    // PDF download functionality
-    const link = document.createElement('a');
-    link.href = '/cv_jeu_shin.pdf';
-    link.download = 'Jeu_Shin_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const a = document.createElement('a');
+    a.href = `${import.meta.env.BASE_URL}cv_jeu_shin.pdf`; // /J.Shin/ 환경에서도 OK
+    a.download = 'Jeu_Shin_CV.pdf';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
   };
+
+
+  // const handleDownloadCV = () => {
+  //   // PDF download functionality
+  //   const link = document.createElement('a');
+  //   link.href = '/public/cv_jeu_shin.pdf';
+  //   link.download = 'Jeu_Shin_CV.pdf';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   return (
     <div className="min-h-screen py-20">

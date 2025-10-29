@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ArrowRight, Mail, ExternalLink } from 'lucide-react';
+import profile from "/public/images/profile.jpg";
 
 const Home = () => {
   return (
@@ -80,11 +81,7 @@ const Home = () => {
 
             {/* 사진 영역 (우측) */}
             <div className="order-1 md:order-2 flex justify-center md:justify-end">
-              <img
-                src="/images/profile.jpg"           // ← 본인 사진 경로
-                alt="Jeu Shin"
-                className="w-64 h-64 md:w-[560px] md:h-[420px] rounded-2xl object-cover shadow-2xl ring-1 ring-black/5"
-              />
+              <img src={profile} alt="profile" />
             </div>
           </div>
         </div>
