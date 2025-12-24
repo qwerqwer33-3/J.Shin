@@ -8,8 +8,8 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Primary Email",
-      value: "jshin01@kaist.ac.kr",
-      link: "mailto:jshin01@kaist.ac.kr"
+      value: "colorcircle33@gmail.com",
+      link: "mailto:colorcircle33@gmail.com"
     },
     {
       icon: <Mail className="h-5 w-5" />,
@@ -26,7 +26,7 @@ const Contact = () => {
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "Location",
-      value: "Daejeon, South Korea",
+      value: "Suwon, South Korea",
       link: null
     }
   ];

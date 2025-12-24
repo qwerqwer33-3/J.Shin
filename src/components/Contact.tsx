@@ -17,12 +17,12 @@ const Contact = () => {
       value: "colorcircle33@gmail.com",
       link: "mailto:colorcircle33@gmail.com"
     },
-    {
-      icon: <Phone className="h-5 w-5" />,
-      label: "전화번호",
-      value: "+82-10-5513-0665",
-      link: "tel:+821055130665"
-    },
+    // {
+    //   icon: <Phone className="h-5 w-5" />,
+    //   label: "전화번호",
+    //   value: "+82-10-5513-0665",
+    //   link: "tel:+821055130665"
+    // },
     {
       icon: <MapPin className="h-5 w-5" />,
       label: "위치",

@@ -7,6 +7,13 @@ import { Download, GraduationCap, Briefcase, Code, Languages, Mail, Phone, MapPi
 const Resume = () => {
   const education = [
     {
+      degree: "Integrated Ph.D. student in Energy Systems Research",
+      school: "Ajou University",
+      period: "Mar. 2026 - ",
+      location: "Suwon, Korea",
+      details: ["Materials Modeling Laboratory (M2) under Prof. Sung Beom Cho", "TBD", "TBD"]
+    },
+    {
       degree: "B.S. in Mechanical Engineering",
       school: "Hanbat National University",
       period: "Mar. 2020 - Aug. 2024",
@@ -19,7 +26,7 @@ const Resume = () => {
     {
       title: "Researcher (Part-time, Contract)",
       company: "KAIST - Cho Chun Shik Graduate School of Mobility",
-      period: "Sep. 2024 - Present",
+      period: "Sep. 2024 - Dec. 2025",
       location: "Daejeon, Korea",
       description: "Development of accelerated battery degradation model\nDesign optimization considering battery degradation",
       achievements: ["Accelerated lithium-ion battery degradation prediction research", "Multi-scale, multi-physics battery analysis and optimization"]
@@ -58,7 +65,7 @@ const Resume = () => {
     {
       icon: <Mail className="h-4 w-4" />,
       label: "Email",
-      value: "jshin01@kaist.ac.kr"
+      value: "colorcircle33@gmail.com"
     },
     {
       icon: <Mail className="h-4 w-4" />,
@@ -73,7 +80,7 @@ const Resume = () => {
     {
       icon: <MapPin className="h-4 w-4" />,
       label: "Location",
-      value: "Daejeon, South Korea"
+      value: "Suwon, South Korea"
     }
   ];
 

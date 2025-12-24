@@ -21,7 +21,7 @@ const Home = () => {
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground mb-6 leading-relaxed">
-                Researcher at Cho Chun Shik Graduate School of Mobility, KAIST
+                Integrated Ph.D. Student in the Department of Energy Systems Research, Ajou University
               </p>
 
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl md:max-w-none">
@@ -101,9 +101,9 @@ const Home = () => {
               <span className="gradient-text">Current Research</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Currently, as a researcher at the Battery System Laboratory (BSL), I am involved in research on 
-              optimization considering battery degradation phenomena and the development of an accelerated 
-              simulation model for faster degradation prediction.
+              Currently, as an Integrated Ph.D. student in the Materials Modeling Laboratory (M2), 
+              I am conducting materials–processing research for next-generation batteries, 
+              focusing on simulation-driven modeling and optimization of electrode fabrication and microstructural control.
             </p>
           </div>
 
