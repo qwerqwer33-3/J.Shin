@@ -8,8 +8,8 @@ const Contact = () => {
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Primary Email",
-      value: "colorcircle33@gmail.com",
-      link: "mailto:colorcircle33@gmail.com"
+      value: "jshin01@ajou.ac.kr",
+      link: "mailto:jshin01@ajou.ac.kr"
     },
     {
       icon: <Mail className="h-5 w-5" />,
@@ -112,7 +112,7 @@ const Contact = () => {
                 <div className="pt-4">
                   <Button 
                     className="w-full btn-primary"
-                    onClick={() => window.open('mailto:colorcircle33@gmail.com?subject=Research Collaboration Inquiry', '_blank')}
+                    onClick={() => window.open('mailto:jshin01@ajou.ac.kr?subject=Research Collaboration Inquiry', '_blank')}
                   >
                     <Mail className="h-4 w-4 mr-2" />
                     Send Email
@@ -179,7 +179,7 @@ const Contact = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
                   className="btn-primary"
-                  onClick={() => window.open('mailto:colorcircle33@gmail.com?subject=Research Collaboration Proposal', '_blank')}
+                  onClick={() => window.open('mailto:jshin01@ajou.ac.kr?subject=Research Collaboration Proposal', '_blank')}
                 >
                   Propose Collaboration
                 </Button>

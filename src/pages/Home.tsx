@@ -25,9 +25,9 @@ const Home = () => {
               </p>
 
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl md:max-w-none">
-                I hold a Bachelor's degree in Mechanical Engineering. During my undergraduate studies, I focused on analyzing
-                the mechanical-electrochemical performance differences based on battery geometry, systematically investigating
-                how various design parameters affect battery performance.
+                I hold a Bachelor's degree in Mechanical Engineering and currently work on battery process and materials
+                modeling. My recent research focuses on FEM-based process analysis and DFT-based materials mechanism studies
+                to better understand and improve battery performance.
               </p>
 
               {/* CTA Buttons */}
@@ -53,7 +53,7 @@ const Home = () => {
                   size="icon"
                   className="w-12 h-12 rounded-full"
                   aria-label="Email"
-                  onClick={() => (window.location.href = 'mailto:colorcircle33@gmail.com')}
+                  onClick={() => (window.location.href = 'mailto:jshin01@ajou.ac.kr')}
                 >
                   <Mail className="h-5 w-5" />
                 </Button>
@@ -101,9 +101,9 @@ const Home = () => {
               <span className="gradient-text">Current Research</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Currently, as an Integrated Ph.D. student in the Materials Modeling Laboratory (M2), 
-              I am conducting materials–processing research for next-generation batteries, 
-              focusing on simulation-driven modeling and optimization of electrode fabrication and microstructural control.
+              Currently, as an Integrated Ph.D. student in the Materials Modeling Laboratory (MSQ),
+              I am conducting FEM-based battery process modeling and DFT-based materials analysis
+              for next-generation battery design and optimization.
             </p>
           </div>
 
@@ -119,7 +119,7 @@ const Home = () => {
 
             <Card className="card-elegant hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-4">Multi-Scale Analysis</h3>
+                <h3 className="text-xl font-semibold mb-4">Multi-Scale & Multi-Physics</h3>
                 <p className="text-muted-foreground">
                   Multi-Scale Approaches & Multi-Physics Analysis
                 </p>
@@ -137,9 +137,18 @@ const Home = () => {
 
             <Card className="card-elegant hover:scale-105 transition-transform duration-300">
               <CardContent className="p-6 text-center">
-                <h3 className="text-xl font-semibold mb-4">Battery Safety</h3>
+                <h3 className="text-xl font-semibold mb-4">Battery Process</h3>
                 <p className="text-muted-foreground">
-                  Safety improvement and reliability research
+                  Process modeling and optimization for battery manufacturing
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="card-elegant hover:scale-105 transition-transform duration-300">
+              <CardContent className="p-6 text-center">
+                <h3 className="text-xl font-semibold mb-4">Battery Materials</h3>
+                <p className="text-muted-foreground">
+                  Atomistic and interfacial mechanism analysis for battery materials
                 </p>
               </CardContent>
             </Card>

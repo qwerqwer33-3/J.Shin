@@ -9,9 +9,13 @@ const Resume = () => {
     {
       degree: "Integrated Ph.D. student in Energy Systems Research",
       school: "Ajou University",
-      period: "Mar. 2026 - ",
+      period: "Mar. 2026 - Present",
       location: "Suwon, Korea",
-      details: ["Materials Modeling Laboratory (M2) under Prof. Sung Beom Cho", "TBD", "TBD"]
+      details: [
+        "Materials Modeling Laboratory (MSQ) under Prof. Sung Beom Cho",
+        "FEM-based modeling for solvent-free dry electrode processing",
+        "DFT-based analysis to identify mechanisms behind battery performance"
+      ]
     },
     {
       degree: "B.S. in Mechanical Engineering",
@@ -24,8 +28,20 @@ const Resume = () => {
 
   const experience = [
     {
+      title: "Graduate Student Researcher (Integrated Ph.D. Program)",
+      company: "Ajou University - Department of Energy Systems Research (MSQ)",
+      period: "Jan. 2026 - Present",
+      location: "Suwon, Korea",
+      description: "Conducting FEM-based modeling for dry electrode processing\nConducting DFT-based analysis for battery performance mechanisms",
+      achievements: [
+        "Developing FEM workflows to analyze process-structure relationships in dry electrode manufacturing",
+        "Using DFT calculations to identify root causes behind battery performance trends",
+        "Started full-time lab research in Jan. 2026 prior to formal admission in Mar. 2026"
+      ]
+    },
+    {
       title: "Researcher (Part-time, Contract)",
-      company: "KAIST - Cho Chun Shik Graduate School of Mobility",
+      company: "KAIST - Cho Chun Shik Graduate School of Mobility (BSL)",
       period: "Sep. 2024 - Dec. 2025",
       location: "Daejeon, Korea",
       description: "Development of accelerated battery degradation model\nDesign optimization considering battery degradation",
@@ -33,7 +49,7 @@ const Resume = () => {
     },
     {
       title: "Research Intern",
-      company: "KAIST - Cho Chun Shik Graduate School of Mobility",
+      company: "KAIST - Cho Chun Shik Graduate School of Mobility (BSL)",
       period: "May 2024 - Aug. 2024",
       location: "Daejeon, Korea",
       description: "Battery degradation model development research",
@@ -41,7 +57,7 @@ const Resume = () => {
     },
     {
       title: "Research Student",
-      company: "Hanbat National University - Mechanical Engineering",
+      company: "Hanbat National University - Mechanical Engineering (BSL)",
       period: "Feb. 2022 - Feb. 2024",
       location: "Daejeon, Korea",
       description: "Lithium-ion battery analysis research",
@@ -50,7 +66,7 @@ const Resume = () => {
   ];
 
   const skills = {
-    "Simulation Tools": ["COMSOL Multiphysics", "MATLAB"],
+    "Simulation Tools": ["COMSOL Multiphysics", "MATLAB", "VASP"],
     "Design Tools": ["CATIA"],
     "Programming": ["Python"],
     "Research Areas": ["Battery Modeling", "Multi-scale & Multi-physics Analysis", "Physics-Based Simulation"]
@@ -65,7 +81,7 @@ const Resume = () => {
     {
       icon: <Mail className="h-4 w-4" />,
       label: "Email",
-      value: "colorcircle33@gmail.com"
+      value: "jshin01@ajou.ac.kr"
     },
     {
       icon: <Mail className="h-4 w-4" />,

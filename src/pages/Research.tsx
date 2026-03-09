@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Battery, Layers, TrendingDown, Shield, Settings } from 'lucide-react';
+import { Atom, Battery, Layers, TrendingDown, Wrench, Settings } from 'lucide-react';
 
 const Research = () => {
   const researchAreas = [
@@ -27,11 +27,18 @@ const Research = () => {
       color: "bg-purple-500/10 text-purple-600 border-purple-200"
     },
     {
-      icon: <Shield className="h-8 w-8" />,
-      title: "Battery Safety",
-      description: "Research for improving battery safety and reliability in various operating conditions",
-      tags: ["Battery Safety", "Reliability", "Thermal Management", "Risk Assessment", "Safety Analysis"],
+      icon: <Wrench className="h-8 w-8" />,
+      title: "Battery Process",
+      description: "Modeling and optimization of battery manufacturing processes and effects on electrode structure and performance",
+      tags: ["Battery Process", "Process Modeling", "Manufacturing", "FEM", "Optimization"],
       color: "bg-red-500/10 text-red-600 border-red-200"
+    },
+    {
+      icon: <Atom className="h-8 w-8" />,
+      title: "Battery Materials",
+      description: "Analysis of atomistic and interfacial material mechanisms affecting battery performance",
+      tags: ["Battery Materials", "DFT", "Mechanism Analysis", "Interfacial Chemistry", "Material Design"],
+      color: "bg-cyan-500/10 text-cyan-600 border-cyan-200"
     },
     {
       icon: <Settings className="h-8 w-8" />,
@@ -70,8 +77,8 @@ const Research = () => {
               <span className="gradient-text">Research Interests</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              My research focuses on improving the safety, reliability, and performance of batteries, 
-              advancing the efficiency of battery technologies through systematic investigation and innovative approaches.
+              My research focuses on improving battery performance, durability, and manufacturability 
+              through multiscale modeling, materials analysis, and optimization-driven design.
             </p>
           </div>
 

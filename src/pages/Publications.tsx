@@ -3,14 +3,14 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Calendar, Users } from 'lucide-react';
-const MY_NAME = "J. Shin";
+const MY_NAME = "Jeu Shin";
 const Publications = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const publications = [
   // Journal Papers
   {
     title: "Multi-scale mechanical-electrochemical coupled modeling of stress generation and its impact on different battery cell geometries",
-    authors: ["J. Shin†", "Y.K. Lee*"],
+    authors: ["Jeu Shin†", "Yoon Koo Lee*"],
     venue: "Journal of Power Sources (IF: 8.1)",
     year: "2024",
     type: "journal",
@@ -20,7 +20,7 @@ const Publications = () => {
     link: "https://doi.org/10.1016/j.jpowsour.2024.234064"
   }, {
     title: "Development of an accelerated side reaction-electrochemical coupled modeling for lithium-ion batteries via controlled side reaction rates",
-    authors: ["J. Shin†", "Y. Jang", "D. Kim", "D.W. Kim", "Y.K. Lee*"],
+    authors: ["Jeu Shin†", "Yeonghwan Jang", "D. Kim", "D.W. Kim", "Yoon Koo Lee*"],
     venue: "In Preparation",
     year: "-",
     type: "journal",
@@ -30,7 +30,7 @@ const Publications = () => {
     link: "#"
   }, {
     title: "Multi-scale & multi-physics design optimization for shared autonomous electric vehicle system considering dynamic battery degradation",
-    authors: ["D. Lee†", "U. Lee†", "J. Shin", "Y.K. Lee*", "N. Kang*"],
+    authors: ["Dongeon Lee†", "Ungki Lee†", "Jeu Shin", "Yoon Koo Lee*", "Namwoo Kang*"],
     venue: "In Preparation",
     year: "-",
     type: "journal",
@@ -41,8 +41,58 @@ const Publications = () => {
   },
   // Conference Papers
   {
+    title: "Multi-Method Screening of Chemically Inert Oxide Anode Coating Layers for Lithium Metal and All-Solid-State Batteries",
+    authors: ["Jeu Shin", "Dong Won Jeon", "Sung Beom Cho"],
+    venue: "2026 Spring Academic Conference, The Korean Ceramic Society",
+    year: "2026",
+    type: "conference",
+    status: "pre_presentation",
+    abstract: "A multi-method high-throughput screening framework is used to identify chemically inert oxide coating layers for lithium metal and all-solid-state batteries, with experimental validation of promising candidates.",
+    keywords: ["All-solid-state battery", "Anode coating", "High-throughput screening", "Lithium metal", "Oxide materials"],
+    link: "#"
+  }, {
+    title: "Multiscale Understanding of Solvent-Free Dry Electrode Processing",
+    authors: ["Jeu Shin", "Jun Hyuk Kang", "Sung Beom Cho"],
+    venue: "2026 Spring Academic Conference, The Korean Ceramic Society",
+    year: "2026",
+    type: "conference",
+    status: "pre_presentation",
+    abstract: "A multiscale framework combining FEM, Gaussian process regression, and Bayesian optimization is developed to understand and optimize PTFE fibrillation in solvent-free dry electrode processing.",
+    keywords: ["Dry electrode", "PTFE fibrillation", "Multiscale modeling", "Bayesian optimization", "Electrode processing"],
+    link: "#"
+  }, {
+    title: "Role of Ion Distribution in Droplet-Based Hydrovoltaic Energy Harvesting",
+    authors: ["Jeu Shin", "Min Sung Kang", "Sung Beom Cho"],
+    venue: "2026 Spring Academic Conference, The Korean Energy Society",
+    year: "2026",
+    type: "conference",
+    status: "pre_presentation",
+    abstract: "A coupled multiphysics model shows that ion concentration distribution is the key driver of voltage generation in droplet-based hydrovoltaic systems and provides design guidance across porosity and humidity conditions.",
+    keywords: ["Hydrovoltaic", "Ion distribution", "Porous media", "Electrostatics", "Energy harvesting"],
+    link: "#"
+  }, {
+    title: "Multiscale insights into PTFE Fibrillation in Dry Electrode Processing",
+    authors: ["Jeu Shin", "Jun Hyuk Kang", "Sung Beom Cho"],
+    venue: "2026 Spring Academic Conference, The Korean Energy Society",
+    year: "2026",
+    type: "conference",
+    status: "pre_presentation",
+    abstract: "A multiscale FEM-GPR-Bayesian optimization framework reveals how particle size and particle-loaded pressure govern PTFE fibrillation in dry electrode processing, identifying optimal conditions that were validated by improved electrochemical performance.",
+    keywords: ["Dry electrode", "PTFE fibrillation", "Multiscale optimization", "Bayesian optimization", "Electrochemical validation"],
+    link: "#"
+  }, {
+    title: "Development of a Cell-Vehicle-Operations Multi-scale Design Optimization Framework for SAEVs",
+    authors: ["Jeu Shin", "Dongeon Lee", "Ungki Lee", "Namwoo Kang", "Yoon Koo Lee"],
+    venue: "2025 Fall Academic Conference, The Korean Society of Automotive Engineers",
+    year: "2025",
+    type: "conference",
+    status: "presented",
+    abstract: "Development of a multi-scale design optimization framework linking cell, vehicle, and operation levels for SAEV systems.",
+    keywords: ["SAEV", "Multi-scale optimization", "Battery design", "Vehicle-operation co-design", "Framework development"],
+    link: "#"
+  }, {
     title: "Phase-Field Modeling of Lithium Dendrite Growth Morphology Depending on Surface Patterning in Li-Metal Batteries",
-    authors: ["Y. Jang", "J. Shin", "Y.K. Lee"],
+    authors: ["Yeonghwan Jang", "Jeu Shin", "Yoon Koo Lee"],
     venue: "2025 Spring Academic Conference, The Korean Electrochemical Society",
     year: "2025",
     type: "conference",
@@ -52,7 +102,7 @@ const Publications = () => {
     link: "#"
   }, {
     title: "Development of a Physics-Based Accelerated Degradation Model for Predicting Lithium-Ion Battery Degradation",
-    authors: ["J. Shin", "Y.K. Lee"],
+    authors: ["Jeu Shin", "Yoon Koo Lee"],
     venue: "2025 Spring Academic Conference, The Korean Electrochemical Society",
     year: "2025",
     type: "conference",
@@ -62,7 +112,7 @@ const Publications = () => {
     link: "#"
   }, {
     title: "Development of an Accelerated Simulation Model for Predicting Degradation and Optimizing Performance of Lithium-Ion Batteries",
-    authors: ["J. Shin", "Y.K. Lee"],
+    authors: ["Jeu Shin", "Yoon Koo Lee"],
     venue: "2024 Fall Academic Conference, CAE and Applied Mechanics Division, The Korean Society of Mechanical Engineers",
     year: "2024",
     type: "conference",
@@ -72,7 +122,7 @@ const Publications = () => {
     link: "#"
   }, {
     title: "Impact of battery structural geometry on battery performance: A mechanical-electrochemical performance analysis",
-    authors: ["J. Shin", "Y.K. Lee"],
+    authors: ["Jeu Shin", "Yoon Koo Lee"],
     venue: "2024 Spring Academic Conference, Chungcheong Branch, The Korean Society of Mechanical Engineers",
     year: "2024",
     type: "conference",
@@ -82,7 +132,7 @@ const Publications = () => {
     link: "#"
   }, {
     title: "Study on the impact of the geometric shape of lithium-ion battery on mechanical and electrochemical performance",
-    authors: ["J. Shin", "Y.K. Lee"],
+    authors: ["Jeu Shin", "Yoon Koo Lee"],
     venue: "2023 Spring Academic Conference, CAE and Applied Mechanics Division, The Korean Society of Mechanical Engineers",
     year: "2023",
     type: "conference",
@@ -94,7 +144,7 @@ const Publications = () => {
   // Patents
   {
     title: "Accelerated Lithium-Ion Battery Degradation Prediction Method Through Control of Side Reaction Rate, Prediction System Utilizing Said Method, and Computer-Readable Recording Medium",
-    authors: ["J. Shin", "Y.K. Lee"],
+    authors: ["Jeu Shin", "Yoon Koo Lee"],
     venue: "Korean Patent Application No. 10-2025-0076896",
     year: "2025",
     type: "patent",
@@ -125,6 +175,8 @@ const Publications = () => {
         return <Badge className="bg-yellow-100 text-yellow-800 border-yellow-200">Under Review</Badge>;
       case 'accepted':
         return <Badge className="bg-blue-100 text-blue-800 border-blue-200">Accepted</Badge>;
+      case 'pre_presentation':
+        return <Badge className="bg-blue-100 text-blue-800 border-blue-200">Upcoming</Badge>;
       case 'filed':
         return <Badge className="bg-purple-100 text-purple-800 border-purple-200">Filed</Badge>;
       case 'presented':
@@ -232,7 +284,7 @@ const Publications = () => {
           <div className="mt-16 grid md:grid-cols-4 gap-6">
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">9</div>
+                <div className="text-3xl font-bold text-primary mb-2">14</div>
                 <p className="text-muted-foreground">Total Publications</p>
               </CardContent>
             </Card>
@@ -244,7 +296,7 @@ const Publications = () => {
             </Card>
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">5</div>
+                <div className="text-3xl font-bold text-primary mb-2">10</div>
                 <p className="text-muted-foreground">Conference Presentations</p>
               </CardContent>
             </Card>
