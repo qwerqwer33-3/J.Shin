@@ -25,9 +25,9 @@ const Home = () => {
               </p>
 
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl md:max-w-none">
-                I hold a Bachelor's degree in Mechanical Engineering and currently work on battery process and materials
-                modeling. My recent research focuses on FEM-based process analysis and DFT-based materials mechanism studies
-                to better understand and improve battery performance.
+                I hold a Bachelor's degree in Mechanical Engineering. During my undergraduate studies, I focused on analyzing
+                the mechanical-electrochemical performance differences based on battery geometry, systematically investigating
+                how various design parameters affect battery performance.
               </p>
 
               {/* CTA Buttons */}
