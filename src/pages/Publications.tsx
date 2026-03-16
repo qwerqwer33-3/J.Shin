@@ -29,7 +29,7 @@ const Publications = () => {
     keywords: ["Accelerated modeling", "Side reactions", "Battery degradation", "Electrochemical coupling", "Prediction method"],
     link: "#"
   }, {
-    title: "Multi-scale & multi-physics design optimization for shared autonomous electric vehicle system considering dynamic battery degradation",
+    title: "Multi-scale and multi-physics design optimization for shared autonomous electric vehicle system considering dynamic battery degradation",
     authors: ["Dongeon Lee†", "Ungki Lee†", "Jeu Shin", "Yoon Koo Lee*", "Namwoo Kang*"],
     venue: "In Preparation",
     year: "-",
