@@ -46,7 +46,7 @@ const Publications = () => {
     venue: "2026 Spring Academic Conference, The Korean Ceramic Society",
     year: "2026",
     type: "conference",
-    status: "pre_presentation",
+    status: "presented",
     abstract: "A multi-method high-throughput screening framework is used to identify chemically inert oxide coating layers for lithium metal and all-solid-state batteries, with experimental validation of promising candidates.",
     keywords: ["All-solid-state battery", "Anode coating", "High-throughput screening", "Lithium metal", "Oxide materials"],
     link: "#"
@@ -56,7 +56,7 @@ const Publications = () => {
     venue: "2026 Spring Academic Conference, The Korean Ceramic Society",
     year: "2026",
     type: "conference",
-    status: "pre_presentation",
+    status: "presented",
     abstract: "A multiscale framework combining FEM, Gaussian process regression, and Bayesian optimization is developed to understand and optimize PTFE fibrillation in solvent-free dry electrode processing.",
     keywords: ["Dry electrode", "PTFE fibrillation", "Multiscale modeling", "Bayesian optimization", "Electrode processing"],
     link: "#"
@@ -66,7 +66,7 @@ const Publications = () => {
     venue: "2026 Spring Academic Conference, The Korean Energy Society",
     year: "2026",
     type: "conference",
-    status: "pre_presentation",
+    status: "presented",
     abstract: "A coupled multiphysics model shows that ion concentration distribution is the key driver of voltage generation in droplet-based hydrovoltaic systems and provides design guidance across porosity and humidity conditions.",
     keywords: ["Hydrovoltaic", "Ion distribution", "Porous media", "Electrostatics", "Energy harvesting"],
     link: "#"
@@ -76,7 +76,7 @@ const Publications = () => {
     venue: "2026 Spring Academic Conference, The Korean Energy Society",
     year: "2026",
     type: "conference",
-    status: "pre_presentation",
+    status: "presented",
     abstract: "A multiscale FEM-GPR-Bayesian optimization framework reveals how particle size and particle-loaded pressure govern PTFE fibrillation in dry electrode processing, identifying optimal conditions that were validated by improved electrochemical performance.",
     keywords: ["Dry electrode", "PTFE fibrillation", "Multiscale optimization", "Bayesian optimization", "Electrochemical validation"],
     link: "#"

@@ -11,7 +11,7 @@ const Conference = () => {
       venue: "2025 Spring Academic Conference, The Korean Electrochemical Society",
       year: "2025",
       month: "Apr",
-      status: "Upcoming",
+      status: "Presented",
       type: "Conference Presentation"
     },
     {
@@ -20,7 +20,7 @@ const Conference = () => {
       venue: "2025 Spring Academic Conference, The Korean Electrochemical Society",
       year: "2025",
       month: "Apr",
-      status: "Upcoming",
+      status: "Presented",
       type: "Conference Presentation"
     },
     {
@@ -178,7 +178,7 @@ const Conference = () => {
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
                 <div className="text-3xl font-bold text-primary mb-2">2</div>
-                <p className="text-muted-foreground">Upcoming in 2025</p>
+                <p className="text-muted-foreground">Presented in 2025</p>
               </CardContent>
             </Card>
           </div>
