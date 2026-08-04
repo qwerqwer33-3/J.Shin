@@ -21,7 +21,7 @@ const Home = () => {
               </h1>
 
               <p className="text-xl md:text-2xl text-muted-foreground mb-6 leading-relaxed">
-                Integrated Ph.D. Student in the Department of Energy Systems Research, Ajou University
+                Integrated Ph.D. student, School of Advanced Materials Science and Engineering, Sungkyunkwan University
               </p>
 
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl md:max-w-none">
@@ -53,7 +53,7 @@ const Home = () => {
                   size="icon"
                   className="w-12 h-12 rounded-full"
                   aria-label="Email"
-                  onClick={() => (window.location.href = 'mailto:jshin01@ajou.ac.kr')}
+                  onClick={() => (window.location.href = 'mailto:jshin01@skku.edu')}
                 >
                   <Mail className="h-5 w-5" />
                 </Button>
@@ -101,7 +101,7 @@ const Home = () => {
               <span className="gradient-text">Current Research</span>
             </h2>
             <p className="text-xl text-muted-foreground">
-              Currently, as an Integrated Ph.D. student in the Materials Modeling Laboratory (MSQ),
+              Currently, as an Integrated Ph.D. student in the School of Advanced Materials Science and Engineering at Sungkyunkwan University,
               I am conducting FEM-based battery process modeling and DFT-based materials analysis
               for next-generation battery design and optimization.
             </p>

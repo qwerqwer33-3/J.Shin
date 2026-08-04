@@ -19,6 +19,16 @@ const Publications = () => {
     keywords: ["Multi-scale modeling", "Battery geometry", "Stress analysis", "Electrochemical coupling", "Performance analysis"],
     link: "https://doi.org/10.1016/j.jpowsour.2024.234064"
   }, {
+    title: "Adsorption-Regulated Interfacial Activator for Li-Plating-Tolerant High-Energy-Density Silicon/Graphite Anodes",
+    authors: ["Seungeun Yu†", "Jinhyung Kim†", "Jeu Shin†", "Minseok Kim", "Jungmin Lee", "Subi Yang", "Seungho Lee", "San Moon", "Seho Sun", "Patrick Joohyun Kim", "Chanho Kim", "Sung Beom Cho*", "Junghyun Choi*", "Dongsoo Lee*"],
+    venue: "Under Review (SSRN Preprint)",
+    year: "2026",
+    type: "journal",
+    status: "under_review",
+    abstract: "This manuscript proposes an adsorption-regulated interfacial activator for high-energy-density silicon/graphite anodes, aiming to stabilize the anode-electrolyte interface, mitigate Li-plating-induced degradation, and improve cycling durability under demanding operating conditions.",
+    keywords: ["Silicon/graphite anode", "Li plating tolerance", "Interfacial activator", "High-energy-density anodes", "Adsorption regulation"],
+    link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7180401"
+  }, {
     title: "Development of an accelerated side reaction-electrochemical coupled modeling for lithium-ion batteries via controlled side reaction rates",
     authors: ["Jeu Shin†", "Yeonghwan Jang", "D. Kim", "D.W. Kim", "Yoon Koo Lee*"],
     venue: "In Preparation",
@@ -166,7 +176,27 @@ const Publications = () => {
     id: 'patent',
     label: 'Patent'
   }];
-  const filteredPublications = selectedCategory === 'all' ? publications : publications.filter(pub => pub.type === selectedCategory);
+  const typeOrder: Record<string, number> = {
+    journal: 0,
+    conference: 1,
+    patent: 2
+  };
+  const getYearValue = (year: string) => {
+    const parsedYear = Number.parseInt(year, 10);
+    return Number.isNaN(parsedYear) ? Number.NEGATIVE_INFINITY : parsedYear;
+  };
+  const filteredPublications = publications
+    .map((pub, index) => ({ pub, index }))
+    .filter(({ pub }) => selectedCategory === 'all' || pub.type === selectedCategory)
+    .sort((a, b) => {
+      if (selectedCategory === 'all' && a.pub.type !== b.pub.type) {
+        return (typeOrder[a.pub.type] ?? 99) - (typeOrder[b.pub.type] ?? 99);
+      }
+
+      const yearDifference = getYearValue(b.pub.year) - getYearValue(a.pub.year);
+      return yearDifference || a.index - b.index;
+    })
+    .map(({ pub }) => pub);
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'published':
@@ -215,6 +245,7 @@ const Publications = () => {
             {categories.map(category => <Button key={category.id} variant={selectedCategory === category.id ? "default" : "outline"} onClick={() => setSelectedCategory(category.id)} className="px-6 py-2">
                 {category.label}
               </Button>)}
+            <p className="basis-full text-center text-sm text-muted-foreground">† Equal contribution; * Corresponding author</p>
           </div>
 
           {/* Publications List */}
@@ -284,13 +315,13 @@ const Publications = () => {
           <div className="mt-16 grid md:grid-cols-4 gap-6">
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">14</div>
+                <div className="text-3xl font-bold text-primary mb-2">15</div>
                 <p className="text-muted-foreground">Total Publications</p>
               </CardContent>
             </Card>
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">3</div>
+                <div className="text-3xl font-bold text-primary mb-2">4</div>
                 <p className="text-muted-foreground">Journal Papers<br />(Including in progress)</p>
               </CardContent>
             </Card>

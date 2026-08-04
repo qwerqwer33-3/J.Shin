@@ -7,18 +7,21 @@ import { Download, GraduationCap, Briefcase, Code, Languages, Mail, Phone, MapPi
 const Resume = () => {
   const education = [
     {
-      degree: "Integrated Ph.D. student in Energy Systems Research",
-      school: "Ajou University",
+      degreeLines: [
+        "Integrated Ph.D. student in",
+        "Advanced Materials Science and Engineering"
+      ],
+      school: "Sungkyunkwan University",
       period: "Mar. 2026 - Present",
       location: "Suwon, Korea",
       details: [
-        "Materials Modeling Laboratory (MSQ) under Prof. Sung Beom Cho",
+        "Materials Modeling Laboratory (MSQ; relocated from Ajou University) under Prof. Sung Beom Cho",
         "FEM-based modeling for solvent-free dry electrode processing",
         "DFT-based analysis to identify mechanisms behind battery performance"
       ]
     },
     {
-      degree: "B.S. in Mechanical Engineering",
+      degreeLines: ["B.S. in Mechanical Engineering"],
       school: "Hanbat National University",
       period: "Mar. 2020 - Aug. 2024",
       location: "Daejeon, Korea",
@@ -29,14 +32,14 @@ const Resume = () => {
   const experience = [
     {
       title: "Graduate Student Researcher (Integrated Ph.D. Program)",
-      company: "Ajou University - Department of Energy Systems Research (MSQ)",
+      company: "Sungkyunkwan University / formerly Ajou University - Materials Modeling Laboratory (MSQ)",
       period: "Jan. 2026 - Present",
       location: "Suwon, Korea",
       description: "Conducting FEM-based modeling for dry electrode processing\nConducting DFT-based analysis for battery performance mechanisms",
       achievements: [
         "Developing FEM workflows to analyze process-structure relationships in dry electrode manufacturing",
         "Using DFT calculations to identify root causes behind battery performance trends",
-        "Started full-time lab research in Jan. 2026 prior to formal admission in Mar. 2026"
+        "Continued MSQ research through the lab's institutional relocation from Ajou University to Sungkyunkwan University"
       ]
     },
     {
@@ -81,7 +84,7 @@ const Resume = () => {
     {
       icon: <Mail className="h-4 w-4" />,
       label: "Email",
-      value: "jshin01@ajou.ac.kr"
+      value: "jshin01@skku.edu"
     },
     {
       icon: <Mail className="h-4 w-4" />,
@@ -152,9 +155,17 @@ const Resume = () => {
                 <CardContent className="space-y-6">
                   {education.map((edu, index) => (
                     <div key={index} className="border-l-2 border-primary/20 pl-6">
-                      <div className="flex flex-col md:flex-row md:items-center justify-between mb-2">
-                        <h4 className="text-lg font-semibold">{edu.degree}</h4>
-                        <Badge variant="outline">{edu.period}</Badge>
+                      <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between mb-2">
+                        <h4 className="text-lg font-semibold leading-snug">
+                          {edu.degreeLines.map((line, lineIndex) => (
+                            <span key={lineIndex} className="block">
+                              {line}
+                            </span>
+                          ))}
+                        </h4>
+                        <Badge variant="outline" className="shrink-0 self-start whitespace-nowrap md:ml-4">
+                          {edu.period}
+                        </Badge>
                       </div>
                       <p className="text-primary font-medium mb-1">{edu.school}</p>
                       <p className="text-sm text-muted-foreground mb-1">{edu.location}</p>
