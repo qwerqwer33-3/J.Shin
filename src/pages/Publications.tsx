@@ -29,24 +29,14 @@ const Publications = () => {
     keywords: ["Silicon/graphite anode", "Li plating tolerance", "Interfacial activator", "High-energy-density anodes", "Adsorption regulation"],
     link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7180401"
   }, {
-    title: "Development of an accelerated side reaction-electrochemical coupled modeling for lithium-ion batteries via controlled side reaction rates",
-    authors: ["Jeu Shin†", "Yeonghwan Jang", "D. Kim", "D.W. Kim", "Yoon Koo Lee*"],
-    venue: "In Preparation",
-    year: "-",
-    type: "journal",
-    status: "in_preparation",
-    abstract: "Development of accelerated side reaction-electrochemical coupled modeling for lithium-ion batteries through controlled side reaction rates.",
-    keywords: ["Accelerated modeling", "Side reactions", "Battery degradation", "Electrochemical coupling", "Prediction method"],
-    link: "#"
-  }, {
-    title: "Multi-scale and multi-physics design optimization for shared autonomous electric vehicle system considering dynamic battery degradation",
+    title: "Multi-scale design optimization for shared autonomous electric vehicle system considering dynamic battery degradation",
     authors: ["Dongeon Lee†", "Ungki Lee†", "Jeu Shin", "Yoon Koo Lee*", "Namwoo Kang*"],
-    venue: "In Preparation",
+    venue: "Under Review",
     year: "-",
     type: "journal",
-    status: "in_preparation",
-    abstract: "Multi-scale and multi-physics design optimization research for electric vehicles.",
-    keywords: ["Multi-scale optimization", "Multi-physics", "Electric vehicles", "Design optimization", "System integration"],
+    status: "under_review",
+    abstract: "Multi-scale design optimization research for shared autonomous electric vehicle systems considering dynamic battery degradation.",
+    keywords: ["Multi-scale optimization", "Shared autonomous electric vehicle", "Battery degradation", "Design optimization", "System integration"],
     link: "#"
   },
   // Conference Papers
@@ -197,6 +187,13 @@ const Publications = () => {
       return yearDifference || a.index - b.index;
     })
     .map(({ pub }) => pub);
+  const statsPublications = publications.filter(pub => pub.status !== 'in_preparation');
+  const publicationCounts = {
+    total: statsPublications.length,
+    journal: statsPublications.filter(pub => pub.type === 'journal').length,
+    conference: statsPublications.filter(pub => pub.type === 'conference').length,
+    patent: statsPublications.filter(pub => pub.type === 'patent').length
+  };
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'published':
@@ -315,25 +312,25 @@ const Publications = () => {
           <div className="mt-16 grid md:grid-cols-4 gap-6">
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">15</div>
+                <div className="text-3xl font-bold text-primary mb-2">{publicationCounts.total}</div>
                 <p className="text-muted-foreground">Total Publications</p>
               </CardContent>
             </Card>
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">4</div>
-                <p className="text-muted-foreground">Journal Papers<br />(Including in progress)</p>
+                <div className="text-3xl font-bold text-primary mb-2">{publicationCounts.journal}</div>
+                <p className="text-muted-foreground">Journal Papers</p>
               </CardContent>
             </Card>
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">10</div>
+                <div className="text-3xl font-bold text-primary mb-2">{publicationCounts.conference}</div>
                 <p className="text-muted-foreground">Conference Presentations</p>
               </CardContent>
             </Card>
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">1</div>
+                <div className="text-3xl font-bold text-primary mb-2">{publicationCounts.patent}</div>
                 <p className="text-muted-foreground">Patent Applications</p>
               </CardContent>
             </Card>
