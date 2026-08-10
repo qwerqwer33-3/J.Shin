@@ -2,10 +2,22 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Calendar, Users } from 'lucide-react';
+import { ExternalLink, Calendar, Users, ChevronDown } from 'lucide-react';
 const MY_NAME = "Jeu Shin";
 const Publications = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [expandedPublications, setExpandedPublications] = useState<Set<string>>(() => new Set());
+  const toggleDetails = (title: string) => {
+    setExpandedPublications(current => {
+      const next = new Set(current);
+      if (next.has(title)) {
+        next.delete(title);
+      } else {
+        next.add(title);
+      }
+      return next;
+    });
+  };
   const publications = [
   // Journal Papers
   {
@@ -15,7 +27,6 @@ const Publications = () => {
     year: "2024",
     type: "journal",
     status: "published",
-    abstract: "This study develops a multi-scale mechanical-electrochemical coupled model to analyze stress generation and its impact on various battery cell geometries.",
     keywords: ["Multi-scale modeling", "Battery geometry", "Stress analysis", "Electrochemical coupling", "Performance analysis"],
     link: "https://doi.org/10.1016/j.jpowsour.2024.234064"
   }, {
@@ -25,7 +36,6 @@ const Publications = () => {
     year: "2026",
     type: "journal",
     status: "under_review",
-    abstract: "This manuscript proposes an adsorption-regulated interfacial activator for high-energy-density silicon/graphite anodes, aiming to stabilize the anode-electrolyte interface, mitigate Li-plating-induced degradation, and improve cycling durability under demanding operating conditions.",
     keywords: ["Silicon/graphite anode", "Li plating tolerance", "Interfacial activator", "High-energy-density anodes", "Adsorption regulation"],
     link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7180401"
   }, {
@@ -35,7 +45,6 @@ const Publications = () => {
     year: "-",
     type: "journal",
     status: "under_review",
-    abstract: "Multi-scale design optimization research for shared autonomous electric vehicle systems considering dynamic battery degradation.",
     keywords: ["Multi-scale optimization", "Shared autonomous electric vehicle", "Battery degradation", "Design optimization", "System integration"],
     link: "#"
   },
@@ -47,7 +56,6 @@ const Publications = () => {
     year: "2026",
     type: "conference",
     status: "presented",
-    abstract: "A multi-method high-throughput screening framework is used to identify chemically inert oxide coating layers for lithium metal and all-solid-state batteries, with experimental validation of promising candidates.",
     keywords: ["All-solid-state battery", "Anode coating", "High-throughput screening", "Lithium metal", "Oxide materials"],
     link: "#"
   }, {
@@ -57,7 +65,6 @@ const Publications = () => {
     year: "2026",
     type: "conference",
     status: "presented",
-    abstract: "A multiscale framework combining FEM, Gaussian process regression, and Bayesian optimization is developed to understand and optimize PTFE fibrillation in solvent-free dry electrode processing.",
     keywords: ["Dry electrode", "PTFE fibrillation", "Multiscale modeling", "Bayesian optimization", "Electrode processing"],
     link: "#"
   }, {
@@ -67,7 +74,6 @@ const Publications = () => {
     year: "2026",
     type: "conference",
     status: "presented",
-    abstract: "A coupled multiphysics model shows that ion concentration distribution is the key driver of voltage generation in droplet-based hydrovoltaic systems and provides design guidance across porosity and humidity conditions.",
     keywords: ["Hydrovoltaic", "Ion distribution", "Porous media", "Electrostatics", "Energy harvesting"],
     link: "#"
   }, {
@@ -77,7 +83,6 @@ const Publications = () => {
     year: "2026",
     type: "conference",
     status: "presented",
-    abstract: "A multiscale FEM-GPR-Bayesian optimization framework reveals how particle size and particle-loaded pressure govern PTFE fibrillation in dry electrode processing, identifying optimal conditions that were validated by improved electrochemical performance.",
     keywords: ["Dry electrode", "PTFE fibrillation", "Multiscale optimization", "Bayesian optimization", "Electrochemical validation"],
     link: "#"
   }, {
@@ -87,7 +92,6 @@ const Publications = () => {
     year: "2025",
     type: "conference",
     status: "presented",
-    abstract: "Development of a multi-scale design optimization framework linking cell, vehicle, and operation levels for SAEV systems.",
     keywords: ["SAEV", "Multi-scale optimization", "Battery design", "Vehicle-operation co-design", "Framework development"],
     link: "#"
   }, {
@@ -97,7 +101,6 @@ const Publications = () => {
     year: "2025",
     type: "conference",
     status: "presented",
-    abstract: "Investigation of lithium dendrite growth morphology using phase-field modeling with surface patterning effects in Li-metal batteries.",
     keywords: ["Phase-field modeling", "Lithium dendrite", "Surface patterning", "Li-metal battery", "Growth morphology"],
     link: "#"
   }, {
@@ -107,7 +110,6 @@ const Publications = () => {
     year: "2025",
     type: "conference",
     status: "presented",
-    abstract: "Development of physics-based accelerated degradation model for accurate lithium-ion battery degradation prediction.",
     keywords: ["Physics-based model", "Accelerated degradation", "Battery prediction", "Degradation mechanism", "Modeling approach"],
     link: "#"
   }, {
@@ -117,7 +119,6 @@ const Publications = () => {
     year: "2024",
     type: "conference",
     status: "presented",
-    abstract: "Development of accelerated simulation model for predicting battery degradation and optimizing performance.",
     keywords: ["Accelerated simulation", "Degradation prediction", "Performance optimization", "Battery modeling", "Simulation framework"],
     link: "#"
   }, {
@@ -127,7 +128,6 @@ const Publications = () => {
     year: "2024",
     type: "conference",
     status: "presented",
-    abstract: "Analysis of how battery structural geometry impacts performance through mechanical-electrochemical coupling.",
     keywords: ["Battery geometry", "Structural analysis", "Performance impact", "Mechanical-electrochemical", "Design optimization"],
     link: "#"
   }, {
@@ -137,7 +137,6 @@ const Publications = () => {
     year: "2023",
     type: "conference",
     status: "presented",
-    abstract: "Investigation of geometric shape effects on lithium-ion battery mechanical and electrochemical performance.",
     keywords: ["Geometric shape", "Battery performance", "Mechanical analysis", "Electrochemical analysis", "Shape optimization"],
     link: "#"
   },
@@ -149,7 +148,6 @@ const Publications = () => {
     year: "2025",
     type: "patent",
     status: "filed",
-    abstract: "This patent describes a novel method for predicting lithium-ion battery degradation through controlled side reaction rates, enabling accelerated testing and more accurate lifetime predictions.",
     keywords: ["Patent application", "Degradation prediction", "Side reaction control", "Accelerated testing", "Battery lifetime"],
     link: "#"
   }];
@@ -294,17 +292,29 @@ const Publications = () => {
                           View
                         </Button>
                       )}
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        className="self-end w-fit"
+                        aria-expanded={expandedPublications.has(pub.title)}
+                        onClick={() => toggleDetails(pub.title)}
+                      >
+                        Details
+                        <ChevronDown className={`ml-2 h-4 w-4 transition-transform ${expandedPublications.has(pub.title) ? 'rotate-180' : ''}`} />
+                      </Button>
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">{pub.abstract}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {pub.keywords.map((keyword, keyIndex) => <Badge key={keyIndex} variant="secondary" className="text-xs">
-                        {keyword}
-                      </Badge>)}
-                  </div>
-                </CardContent>
+                {expandedPublications.has(pub.title) && (
+                  <CardContent className="pt-0">
+                    <p className="mb-3 text-sm font-medium text-muted-foreground">Keywords</p>
+                    <div className="flex flex-wrap gap-2">
+                      {pub.keywords.map((keyword, keyIndex) => <Badge key={keyIndex} variant="secondary" className="text-xs">
+                          {keyword}
+                        </Badge>)}
+                    </div>
+                  </CardContent>
+                )}
               </Card>)}
           </div>
 

@@ -25,9 +25,9 @@ const Home = () => {
               </p>
 
               <p className="text-lg text-muted-foreground mb-10 leading-relaxed max-w-3xl md:max-w-none">
-                I hold a Bachelor's degree in Mechanical Engineering. During my undergraduate studies, I focused on analyzing
-                the mechanical-electrochemical performance differences based on battery geometry, systematically investigating
-                how various design parameters affect battery performance.
+                With a B.S. in Mechanical Engineering, I am currently pursuing an integrated Ph.D. in Advanced Materials Science
+                and Engineering. My work applies computational modeling and optimization to battery materials, manufacturing
+                processes, degradation, and system design.
               </p>
 
               {/* CTA Buttons */}
