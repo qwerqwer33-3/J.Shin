@@ -49,24 +49,6 @@ const Research = () => {
     }
   ];
 
-  const currentProjects = [
-    {
-      title: "Development of Accelerated Battery Degradation Model",
-      status: "In Progress",
-      description: "Research on accelerated lithium-ion battery degradation prediction method through side reaction rate control"
-    },
-    {
-      title: "Battery Performance Analysis Based on Geometry",
-      status: "Completed",
-      description: "Analysis of the impact of various battery cell geometries on mechanical-electrochemical performance"
-    },
-    {
-      title: "Multi-scale Battery Optimization",
-      status: "In Progress",
-      description: "Multi-scale and multi-physics design optimization for shared autonomous electric vehicle systems"
-    }
-  ];
-
   return (
     <div className="min-h-screen py-20">
       <div className="container-max section-padding">
@@ -108,29 +90,6 @@ const Research = () => {
                 </CardContent>
               </Card>
             ))}
-          </div>
-
-          {/* Current Research */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-center mb-12">Current Research Projects</h2>
-            <div className="grid gap-6">
-              {currentProjects.map((project, index) => (
-                <Card key={index} className="card-elegant">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                      <h3 className="text-xl font-semibold mb-2 md:mb-0">{project.title}</h3>
-                      <Badge 
-                        variant={project.status === 'In Progress' ? 'default' : project.status === 'Completed' ? 'secondary' : 'outline'}
-                        className="w-fit"
-                      >
-                        {project.status}
-                      </Badge>
-                    </div>
-                    <p className="text-muted-foreground leading-relaxed">{project.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
 
           {/* Research Philosophy */}
