@@ -102,7 +102,7 @@ const Home = () => {
             </h2>
             <p className="text-xl text-muted-foreground">
               Currently, as an Integrated Ph.D. student in the School of Advanced Materials Science and Engineering at Sungkyunkwan University,
-              I am conducting FEM-based battery process modeling and DFT-based materials analysis
+              I am conducting continuum-scale battery modeling and atomistic-scale materials analysis
               for next-generation battery design and optimization.
             </p>
           </div>

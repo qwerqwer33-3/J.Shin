@@ -101,7 +101,7 @@ const Awards = () => {
           </div>
 
           {/* Awards Statistics */}
-          <div className="grid md:grid-cols-3 gap-6 mb-16">
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
                 <div className="text-3xl font-bold text-primary mb-2">2</div>
@@ -114,24 +114,8 @@ const Awards = () => {
                 <p className="text-muted-foreground">Different Categories</p>
               </CardContent>
             </Card>
-            <Card className="card-elegant text-center">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">5</div>
-                <p className="text-muted-foreground">Years of Recognition</p>
-              </CardContent>
-            </Card>
           </div>
 
-          {/* Achievement Philosophy */}
-          <div className="bg-gradient-to-r from-primary/10 to-accent/10 rounded-2xl p-8 border border-primary/20">
-            <h2 className="text-3xl font-bold text-center mb-6">Recognition Journey</h2>
-            <p className="text-lg text-muted-foreground text-center max-w-4xl mx-auto leading-relaxed">
-              These awards represent milestones in my academic and research journey, from early recognition 
-              for creative design thinking to recent acknowledgment of research excellence. Each honor has 
-              motivated me to continue pushing the boundaries of innovation in battery technology and 
-              engineering solutions.
-            </p>
-          </div>
         </div>
       </div>
     </div>

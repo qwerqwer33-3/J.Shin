@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { ExternalLink, Calendar, Users, ChevronDown } from 'lucide-react';
 const MY_NAME = "Jeu Shin";
 const Publications = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState('journal');
   const [expandedPublications, setExpandedPublications] = useState<Set<string>>(() => new Set());
   const toggleDetails = (title: string) => {
     setExpandedPublications(current => {
@@ -32,12 +32,12 @@ const Publications = () => {
   }, {
     title: "Adsorption-Regulated Interfacial Activator for Li-Plating-Tolerant High-Energy-Density Silicon/Graphite Anodes",
     authors: ["Seungeun Yu†", "Jinhyung Kim†", "Jeu Shin†", "Minseok Kim", "Jungmin Lee", "Subi Yang", "Seungho Lee", "San Moon", "Seho Sun", "Patrick Joohyun Kim", "Chanho Kim", "Sung Beom Cho*", "Junghyun Choi*", "Dongsoo Lee*"],
-    venue: "Under Review (SSRN Preprint)",
+    venue: "Chemical Engineering Journal (IF: 12.5, JCR: 6.8%)",
     year: "2026",
     type: "journal",
-    status: "under_review",
+    status: "published",
     keywords: ["Silicon/graphite anode", "Li plating tolerance", "Interfacial activator", "High-energy-density anodes", "Adsorption regulation"],
-    link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7180401"
+    link: "https://doi.org/10.1016/j.cej.2026.184201"
   }, {
     title: "Multi-scale design optimization for shared autonomous electric vehicle system considering dynamic battery degradation",
     authors: ["Dongeon Lee†", "Ungki Lee†", "Jeu Shin", "Yoon Koo Lee*", "Namwoo Kang*"],
@@ -152,9 +152,6 @@ const Publications = () => {
     link: "#"
   }];
   const categories = [{
-    id: 'all',
-    label: 'All'
-  }, {
     id: 'journal',
     label: 'Journal'
   }, {
@@ -164,31 +161,21 @@ const Publications = () => {
     id: 'patent',
     label: 'Patent'
   }];
-  const typeOrder: Record<string, number> = {
-    journal: 0,
-    conference: 1,
-    patent: 2
-  };
   const getYearValue = (year: string) => {
     const parsedYear = Number.parseInt(year, 10);
     return Number.isNaN(parsedYear) ? Number.NEGATIVE_INFINITY : parsedYear;
   };
   const filteredPublications = publications
     .map((pub, index) => ({ pub, index }))
-    .filter(({ pub }) => selectedCategory === 'all' || pub.type === selectedCategory)
+    .filter(({ pub }) => pub.type === selectedCategory)
     .sort((a, b) => {
-      if (selectedCategory === 'all' && a.pub.type !== b.pub.type) {
-        return (typeOrder[a.pub.type] ?? 99) - (typeOrder[b.pub.type] ?? 99);
-      }
-
       const yearDifference = getYearValue(b.pub.year) - getYearValue(a.pub.year);
       return yearDifference || a.index - b.index;
     })
     .map(({ pub }) => pub);
   const statsPublications = publications.filter(pub => pub.status !== 'in_preparation');
   const publicationCounts = {
-    total: statsPublications.length,
-    journal: statsPublications.filter(pub => pub.type === 'journal').length,
+    journal: statsPublications.filter(pub => pub.type === 'journal' && pub.status === 'published').length,
     conference: statsPublications.filter(pub => pub.type === 'conference').length,
     patent: statsPublications.filter(pub => pub.type === 'patent').length
   };
@@ -208,18 +195,6 @@ const Publications = () => {
         return <Badge className="bg-green-100 text-green-800 border-green-200">Presented</Badge>;
       default:
         return <Badge variant="secondary">In Preparation</Badge>;
-    }
-  };
-  const getTypeBadge = (type: string) => {
-    switch (type) {
-      case 'journal':
-        return <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200">Journal</Badge>;
-      case 'conference':
-        return <Badge className="bg-sky-100 text-sky-800 border-sky-200">Conference</Badge>;
-      case 'patent':
-        return <Badge className="bg-amber-100 text-amber-800 border-amber-200">Patent</Badge>;
-      default:
-        return <Badge variant="secondary">Other</Badge>;
     }
   };
   return <div className="min-h-screen py-20">
@@ -252,7 +227,7 @@ const Publications = () => {
                       <CardTitle className="text-xl mb-2 leading-tight">{pub.title}</CardTitle>
                       <div className="flex items-center gap-4 text-sm text-muted-foreground mb-2">
                       <div className="flex items-center gap-1">
-                        <Users className="h-4 w-4" />
+                        <Users className="h-4 w-4 shrink-0" />
                         <span>
                           {pub.authors.map((a, i) => {
                             const m = a.match(/^(.*?)([†*]+)?$/);   // 끝의 †/* 분리 (표식은 그대로, sup 안 씀)
@@ -281,7 +256,6 @@ const Publications = () => {
                       </div>
                       <div className="flex items-center gap-2 mb-2">
                         <p className="text-sm font-medium text-primary">{pub.venue}</p>
-                        {selectedCategory === 'all' && <span className="inline-flex">{getTypeBadge(pub.type)}</span>}
                       </div>
                     </div>
                     <div className="ml-auto flex flex-col items-end gap-2">
@@ -319,13 +293,7 @@ const Publications = () => {
           </div>
 
           {/* Publication Stats */}
-          <div className="mt-16 grid md:grid-cols-4 gap-6">
-            <Card className="card-elegant text-center">
-              <CardContent className="p-6">
-                <div className="text-3xl font-bold text-primary mb-2">{publicationCounts.total}</div>
-                <p className="text-muted-foreground">Total Publications</p>
-              </CardContent>
-            </Card>
+          <div className="mt-16 grid md:grid-cols-3 gap-6">
             <Card className="card-elegant text-center">
               <CardContent className="p-6">
                 <div className="text-3xl font-bold text-primary mb-2">{publicationCounts.journal}</div>

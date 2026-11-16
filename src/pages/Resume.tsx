@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { Download, GraduationCap, Briefcase, Code, Languages, Mail, Phone, MapPin } from 'lucide-react';
+import { Download, GraduationCap, Briefcase, Code, Mail, Phone, MapPin } from 'lucide-react';
 
 const Resume = () => {
   const education = [
@@ -15,7 +15,7 @@ const Resume = () => {
       period: "Mar. 2026 - Present",
       location: "Suwon, Korea",
       details: [
-        "Materials Modeling Laboratory (MSQ; relocated from Ajou University) under Prof. Sung Beom Cho",
+        "Materials AI Modeling Laboratory (MSQ; relocated from Ajou University) under Prof. Sung Beom Cho",
         "FEM-based modeling for solvent-free dry electrode processing",
         "DFT-based analysis to identify mechanisms behind battery performance"
       ]
@@ -32,7 +32,7 @@ const Resume = () => {
   const experience = [
     {
       title: "Graduate Student Researcher (Integrated Ph.D. Program)",
-      company: "Sungkyunkwan University / formerly Ajou University - Materials Modeling Laboratory (MSQ)",
+      company: "Sungkyunkwan University / formerly Ajou University - Materials AI Modeling Laboratory (MSQ)",
       period: "Jan. 2026 - Present",
       location: "Suwon, Korea",
       description: "Conducting FEM-based modeling for dry electrode processing\nConducting DFT-based analysis for battery performance mechanisms",
@@ -69,16 +69,11 @@ const Resume = () => {
   ];
 
   const skills = {
-    "Simulation Tools": ["COMSOL Multiphysics", "MATLAB", "VASP"],
+    "Simulation Tools": ["COMSOL Multiphysics", "MATLAB", "VASP", "LAMMPS"],
     "Design Tools": ["CATIA"],
     "Programming": ["Python"],
     "Research Areas": ["Battery Modeling", "Multi-scale & Multi-physics Analysis", "Physics-Based Simulation"]
   };
-
-  const languages = [
-    { name: "Korean", level: "Native" },
-    //{ name: "English", level: "Intermediate" }
-  ];
 
   const contactInfo = [
     {
@@ -262,25 +257,6 @@ const Resume = () => {
                 </CardContent>
               </Card>
 
-              {/* Languages */}
-              <Card className="card-elegant">
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-3 text-xl">
-                    <Languages className="h-5 w-5 text-primary" />
-                    Languages
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {languages.map((lang, index) => (
-                    <div key={index} className="flex justify-between items-center">
-                      <span className="font-medium">{lang.name}</span>
-                      <Badge variant="outline" className="text-xs">
-                        {lang.level}
-                      </Badge>
-                    </div>
-                  ))}
-                </CardContent>
-              </Card>
             </div>
           </div>
         </div>

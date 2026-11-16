@@ -30,14 +30,14 @@ const Research = () => {
       icon: <Wrench className="h-8 w-8" />,
       title: "Battery Process",
       description: "Modeling and optimization of battery manufacturing processes and effects on electrode structure and performance",
-      tags: ["Battery Process", "Process Modeling", "Manufacturing", "FEM", "Optimization"],
+      tags: ["Battery Process", "Process Modeling", "Manufacturing", "FEM / FVM / FDM / DEM", "Optimization"],
       color: "bg-red-500/10 text-red-600 border-red-200"
     },
     {
       icon: <Atom className="h-8 w-8" />,
       title: "Battery Materials",
       description: "Analysis of atomistic and interfacial material mechanisms affecting battery performance",
-      tags: ["Battery Materials", "DFT", "Mechanism Analysis", "Interfacial Chemistry", "Material Design"],
+      tags: ["Battery Materials", "DFT / MD", "Mechanism Analysis", "Interfacial Chemistry", "Material Design"],
       color: "bg-cyan-500/10 text-cyan-600 border-cyan-200"
     },
     {
